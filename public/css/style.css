@@ -1,0 +1,61 @@
+*{margin:0;padding:0;}
+body{background: url("../images/bg.png");}
+ul{list-style: none;}
+a{text-decoration: none;}
+img{border:none;}
+.clearfix:after{content:"200B";height:0;font-size:0;display:block;clear:both;}
+.clearfix{*zoom:1;}
+.hide{display: none;}
+.modal{ width:100%; height:100%; position:fixed; left:0; top:0; background:rgba(34,34,34,0.9);}
+
+.loginBox{background: #fff;width:600px;color: #222;margin:250px auto;letter-spacing: 0.0625rem;overflow: hidden;border-radius:9px;box-shadow:0 0 6px rgba(0,0,0,0.5) inset;text-align: center;padding:20px 0;position: relative;z-index: 2;}
+.loginBox div{padding:7px 0;}
+.loginBox .gender{position: relative;}
+.loginBox .gender img{width:27px;}
+.loginBox .por .chosedimg{}
+.loginBox .por img{width:60px;border-radius: 6px;}
+.loginBox .pic{background: #000;box-shadow:0 0 6px rgba(0,0,0,0.5);width:591px;height:370px;position:absolute;top:-384px;left:0;padding-left:9px;border-radius: 9px;}
+.loginBox .pic ul{padding-bottom:7px;}
+.loginBox li{float:left;cursor:pointer;margin:3px;width:50px;height:50px;border-radius: 3px;overflow: hidden;position:relative;border:1px solid #fff;}
+.loginBox li img{width:50px;}
+.loginBox li span{display:none;}
+.loginBox li.ac img{opacity: 0.7}
+.loginBox li.ac span{position: absolute;top:4px;left:7px;display: block;}
+.loginBox li span img{width:40px;opacity:1;}
+.loginBox .por .btn{width:90px;font-weight:600;font-size:15px;}
+.loginBox .pic .btn{background: #fff;color:#000;margin:10px;width:85px;font-size:14px;font-weight: 600;}
+.loginBox .btn{display:inline-block;width:120px;height:30px;line-height:30px;font-size:16px;border-radius:3px;box-shadow:1px 1px 3px rgba(0,0,0,0.5);background-color: #000;color:#fff;cursor: pointer;font-weight:700;}
+#nickname{border-radius: 3px;height:27px;}
+
+.chatroom{width:55%;height:700px;background:#fff;border-radius:9px;margin:90px auto 0;box-shadow:0 0 5px rgba(0,0,0,0.5);position: relative;border:1px solid #000;display: none;}
+.chatroom .inner{position: relative;z-index: 2;}
+.chatroom .left{width:15%;float: left;margin-top:25px;}
+.chatroom .left .num{width:230px;height:40px;padding:10px 0;}
+.chatroom .left .member .memPic{border:1px solid #000;width:50px;height:50px;border-radius: 4px;overflow: hidden;float: left;margin:0 4px;}
+.chatroom .left .member li{margin-bottom:5px;font-size:14px;}
+.chatroom .left .member li.members{cursor:pointer;}
+.chatroom .left .member p{font-weight:600;}
+.chatroom .left .member p{font-weight:600;}
+.chatroom .left .member .memPic img{width:50px;}
+.chatroom .sex{width:12px;}
+.chatroom  .left .member .statenow{font-size:12px;}
+.chatroom .mid{width:70%;height:700px;float: left;}
+.chatroom .mid .chating{width:99%;height:540px;margin:60px auto 10px;border:1px solid #ccc;}
+.chatroom .mid .chating .loginMsg{font-size:16px;font-style:italic;color:blue;font-weight: 600;}
+.chatroom .mid .chating .msg{margin:15px 0;}
+.chatroom .mid .chating .wo{float:right;width:16px;font-weight:600;font-size:14px;padding:0 25px 0 10px;}
+.chatroom .mid .chating .users{float:left;font-weight:600;font-size:14px;padding:0 10px 0 5px;}
+.chatroom .mid .chating .selfMsg{min-width:30px;max-width:60%;word-wrap: break-word;font-size:14px;float:right;background: lawngreen;border-radius: 3px;margin-right:5px;padding:10px;position: relative;}
+.chatroom .mid .chating .selfMsg span{display:block;width:0;height:0;border:5px solid transparent;border-left-color: lawngreen;position: absolute;top:4px;right:-10px;}
+.chatroom .mid .chating .othersMsg{min-width:30px;max-width:60%;word-wrap: break-word;font-size:14px;float:left;background: lawngreen;border-radius: 3px;margin-right:5px;padding:10px;position: relative;}
+.chatroom .mid .chating .othersMsg span{display:block;width:0;height:0;border:5px solid transparent;border-right-color: lawngreen;position: absolute;top:4px;left:-10px;}
+.chatroom .mid .myword{width:99%;float:right;padding-right:10px;}
+.chatroom .mid .myword input{width:300px;}
+#message{width:70%;height:28px;float: right;}
+#send{width:60px;height:28px;float:right;background: #fff;margin-left:5px;}
+.chatroom .right{width:15%;float: left;margin-top:80px;text-align: center;}
+.chatroom .right .myInfo .myPic{border:1px solid #000;width:90px;height:90px;border-radius: 5px;overflow: hidden;margin:0 auto;}
+.chatroom .right .myInfo .myPic img{width:90px;}
+.chatroom .right .myInfo p{padding:5px 0;font-size:15px;font-weight:600;}
+
+

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>聊天室</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery-3.1.0.min.js"></script>
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/index.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+<div class="modal"></div>
+<!--登陆界面-->
+<div class="loginBox">
+    <h1>聊天室</h1>
+    <div class="name">昵称：<input type="text" id="nickname" placeholder="请输入您的昵称(1~6个字符)" maxlength="6"></div>
+    <div class="gender">
+        性别：<label><input type="radio" name="gender" value="images/man.png" checked> <img src="images/man.png">(男)</label> <label><input type="radio" name="gender" value="images/woman.png"><img src="images/woman.png">(女)</label>
+    </div>
+    <div class="state">
+        状态：<label><input type="radio" name="state" value="[在线]" checked>(在线)</label> <label><input type="radio" name="state" value="忙碌">(忙碌)</label>
+    </div>
+    <div class="portrait">
+        <div class="por">
+            <div class="chosedimg"><img src="images/头像/1.jpg"/></div>
+            <div><a id="imgBtn" class="btn">选择头像</a></div>
+        </div>
+        <div class="pic" id="pic">
+            <ul class="clearfix">
+                <li class="ac"><img src="images/头像/1.jpg"><span><img src="images/ok.png"/></span></li>
+                <li><img src="images/头像/2.jpg"><span></span></li>
+                <li><img src="images/头像/3.jpg"><span></span></li>
+                <li><img src="images/头像/4.jpg"><span></span></li>
+                <li><img src="images/头像/5.jpg"><span></span></li>
+                <li><img src="images/头像/6.jpg"><span></span></li>
+                <li><img src="images/头像/7.jpg"><span></span></li>
+                <li><img src="images/头像/8.jpg"><span></span></li>
+                <li><img src="images/头像/9.jpg"><span></span></li>
+                <li><img src="images/头像/10.jpg"><span></span></li>
+                <li><img src="images/头像/11.jpg"><span></span></li>
+                <li><img src="images/头像/12.jpg"><span></span></li>
+                <li><img src="images/头像/13.jpg"><span></span></li>
+                <li><img src="images/头像/14.jpg"><span></span></li>
+                <li><img src="images/头像/15.jpg"><span></span></li>
+                <li><img src="images/头像/16.jpg"><span></span></li>
+                <li><img src="images/头像/17.jpg"><span></span></li>
+                <li><img src="images/头像/18.jpg"><span></span></li>
+                <li><img src="images/头像/19.jpg"><span></span></li>
+                <li><img src="images/头像/20.jpg"><span></span></li>
+                <li><img src="images/头像/21.jpg"><span></span></li>
+                <li><img src="images/头像/22.jpg"><span></span></li>
+                <li><img src="images/头像/23.jpg"><span></span></li>
+                <li><img src="images/头像/24.jpg"><span></span></li>
+                <li><img src="images/头像/25.jpg"><span></span></li>
+                <li><img src="images/头像/26.jpg"><span></span></li>
+                <li><img src="images/头像/27.jpg"><span></span></li>
+                <li><img src="images/头像/28.jpg"><span></span></li>
+                <li><img src="images/头像/29.jpg"><span></span></li>
+                <li><img src="images/头像/30.jpg"><span></span></li>
+                <li><img src="images/头像/31.jpg"><span></span></li>
+                <li><img src="images/头像/32.jpg"><span></span></li>
+                <li><img src="images/头像/33.jpg"><span></span></li>
+                <li><img src="images/头像/34.jpg"><span></span></li>
+                <li><img src="images/头像/35.jpg"><span></span></li>
+                <li><img src="images/头像/36.jpg"><span></span></li>
+                <li><img src="images/头像/37.jpg"><span></span></li>
+                <li><img src="images/头像/38.jpg"><span></span></li>
+                <li><img src="images/头像/39.jpg"><span></span></li>
+                <li><img src="images/头像/40.jpg"><span></span></li>
+                <li><img src="images/头像/41.jpg"><span></span></li>
+                <li><img src="images/头像/42.jpg"><span></span></li>
+                <li><img src="images/头像/43.jpg"><span></span></li>
+                <li><img src="images/头像/44.jpg"><span></span></li>
+                <li><img src="images/头像/45.jpg"><span></span></li>
+                <li><img src="images/头像/46.jpg"><span></span></li>
+                <li><img src="images/头像/47.jpg"><span></span></li>
+                <li><img src="images/头像/48.jpg"><span></span></li>
+                <li><img src="images/头像/49.jpg"><span></span></li>
+                <li><img src="images/头像/50.jpg"><span></span></li>
+            </ul>
+            <a class="btn ok">确定</a> <a class="btn cancel">取消</a>
+        </div>
+    </div>
+    <div><a id="startchat" class="btn">进入聊天室</a></div>
+</div>
+<!--聊天界面-->
+<div class="chatroom" id="chatname">
+    <div class="inner clearfix">
+        <div class="left">
+            <div class="num"></div>
+            <div class="member">
+                <ul id="myself"></ul>
+                <ul id="others"></ul>
+            </div>
+        </div>
+        <div class="mid">
+            <div class="chating" id="messages"></div>
+            <div class="myword">
+                <input type="button" id="send" value="Enter">
+                <input type="text" id="message" placeholder="在这里输入您的聊天内容">
+            </div>
+        </div>
+        <div class="right">
+            <div class="myInfo">
+                <div class="myPic"><img src="" class="myselfPic"/></div>
+                <p class="myNickname"></p>
+                <p id="time"></p>
+            </div>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>
